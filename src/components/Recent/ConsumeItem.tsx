@@ -13,7 +13,7 @@ const ConsumeItem = ({ emoji, place, amount }: ConsumeItemProps) => {
 					<span className='flex-shrink-0 text-black text-2xl whitespace-nowrap leading-normal pl-6'>
 						{emoji}
 					</span>
-					<span className='flex-1 min-w-40 max-w-2xs font-semibold text-black text-2xl overflow-hidden truncate leading-normal'>
+					<span className='flex-1 max-w-2xs font-semibold text-black text-2xl overflow-hidden truncate leading-normal'>
 						{place}
 					</span>
 				</div>
