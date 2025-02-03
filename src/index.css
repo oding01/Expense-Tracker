@@ -4,6 +4,11 @@
 
 @tailwind utilities;
 
+@theme {
+	--breakpoint-tablet: 744px;
+	--breakpoint-desktop: 1440px;
+}
+
 * {
 	box-sizing: border-box;
 	font-family: 'Noto Sans', sans-serif;
