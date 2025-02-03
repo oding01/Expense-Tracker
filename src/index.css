@@ -27,7 +27,11 @@ body {
 		rgb(171.06, 217.23, 255) 0%,
 		rgb(250.75, 253.73, 255) 100%
 	);
-	overflow-x: hidden;
+}
+
+#svgcontainer {
+	position: relative;
+	overflow: hidden;
 }
 
 /* 피그마 프레임 사이즈 적용 */
@@ -76,7 +80,6 @@ body #toprightupball {
 	filter: blur(2.5px);
 	transform: rotate(28.83deg);
 	border-radius: 50%;
-	overflow: hidden;
 }
 
 body #toprightdownball {
@@ -98,7 +101,6 @@ body #toprightdownball {
 	/* Note: backdrop-filter has minimal browser support */
 	transform: rotate(-30deg);
 	border-radius: 50%;
-	overflow: hidden;
 }
 
 body #bottomrightball {
@@ -120,7 +122,6 @@ body #bottomrightball {
 	box-shadow: inset -12px -12px 24px rgba(116, 162, 204, 0.6);
 	filter: blur(2.5px);
 	transform: rotate(-30deg);
-	overflow: hidden;
 	border-radius: 50%;
 	z-index: 1;
 }
