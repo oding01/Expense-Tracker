@@ -29,10 +29,99 @@ body {
 	);
 }
 
+#svgcontainer {
+	position: relative;
+	overflow: hidden;
+}
+
 /* 피그마 프레임 사이즈 적용 */
 #root {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+}
+
+#topleftball {
+	position: absolute;
+	width: 19rem;
+	height: 19rem;
+	left: -5rem;
+	top: -5rem;
+
+	background: linear-gradient(
+		180deg,
+		#ffffff 0%,
+		#5fb1ff 42.5%,
+		#359dff 65.5%,
+		#1d91ff 100%
+	);
+	box-shadow: inset -12px -12px 24px rgba(116, 162, 204, 0.6);
+	filter: blur(2.5px);
+	transform: rotate(61.54deg);
+	border-radius: 50%;
+}
+
+body #toprightupball {
+	position: absolute;
+	width: 9rem;
+	height: 9rem;
+	right: -5rem;
+	top: 4rem;
+
+	background: linear-gradient(
+		180deg,
+		#ffffff 0%,
+		#5fb1ff 42.5%,
+		#359dff 65.5%,
+		#1d91ff 100%
+	);
+	box-shadow: inset -12px -12px 24px rgba(116, 162, 204, 0.6);
+	filter: blur(2.5px);
+	transform: rotate(28.83deg);
+	border-radius: 50%;
+}
+
+body #toprightdownball {
+	position: absolute;
+	width: 14rem;
+	height: 14rem;
+	right: -5rem;
+	top: 9rem;
+
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.45) 0%,
+		rgba(95, 177, 255, 0.45) 42.5%,
+		rgba(53, 157, 255, 0.45) 65.5%,
+		rgba(29, 145, 255, 0.45) 100%
+	);
+	box-shadow: inset -12px -12px 24px rgba(116, 162, 204, 0.6);
+	backdrop-filter: blur(2.5px);
+	/* Note: backdrop-filter has minimal browser support */
+	transform: rotate(-30deg);
+	border-radius: 50%;
+}
+
+body #bottomrightball {
+	/* Ellipse 4 */
+
+	position: absolute;
+	width: 14rem;
+	height: 14rem;
+	right: -5rem;
+	bottom: -5rem;
+
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.42) 0%,
+		rgba(95, 177, 255, 0.42) 42.5%,
+		rgba(53, 157, 255, 0.42) 65.5%,
+		rgba(29, 145, 255, 0.42) 100%
+	);
+	box-shadow: inset -12px -12px 24px rgba(116, 162, 204, 0.6);
+	filter: blur(2.5px);
+	transform: rotate(-30deg);
+	border-radius: 50%;
+	z-index: 1;
 }
