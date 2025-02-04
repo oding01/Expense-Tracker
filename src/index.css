@@ -15,6 +15,13 @@
 	text-align: initial;
 }
 
+#root {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
 html,
 body,
 #root {
