@@ -4,13 +4,16 @@ import '@/index.css'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import { Analyze } from '@/pages/Analyze'
 import Home from '@/pages/Home'
+import Layout from '@/shared/Layout'
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route index element={<Home />} />
-				<Route path='analyze' element={<Analyze />} />
+				<Route element={<Layout />}>
+					<Route index element={<Home />} />
+					<Route path='analyze' element={<Analyze />} />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	</StrictMode>,
