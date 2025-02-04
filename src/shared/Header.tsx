@@ -29,8 +29,8 @@ const Header = () => {
 						<span className='text-xl font-bold'>Logo</span>
 					</Link>
 
-					{/* 데스크탑 메뉴 (768px 미만에서 숨김) */}
-					<div className='hidden md:flex gap-1 ml-auto'>
+					{/* 데스크탑 메뉴 (744px 미만에서 숨김) */}
+					<div className='hidden tablet:flex gap-1 ml-auto'>
 						{menuItems.map((menu) => (
 							<Link
 								key={menu.name}
@@ -48,8 +48,8 @@ const Header = () => {
 						))}
 					</div>
 
-					{/* 모바일 메뉴 버튼 (768px 이상에서 숨김) */}
-					<div className='flex items-center md:hidden'>
+					{/* 모바일 메뉴 버튼 (744px 이상에서 숨김) */}
+					<div className='flex items-center tablet:hidden'>
 						<button
 							onClick={() => setIsOpen(!isOpen)}
 							className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
@@ -60,9 +60,9 @@ const Header = () => {
 					</div>
 				</div>
 
-				{/* 모바일 메뉴 (768px 이상에서 숨김) */}
+				{/* 모바일 메뉴 (744px 이상에서 숨김) */}
 				{isOpen && (
-					<div className='absolute top-full left-0 w-full bg-white border-b border-gray-200 md:hidden'>
+					<div className='absolute top-full left-0 w-full bg-white border-b border-gray-200 tablet:hidden'>
 						<div className='space-y-1 pb-3 pt-2'>
 							{menuItems.map((menu) => (
 								<Link
