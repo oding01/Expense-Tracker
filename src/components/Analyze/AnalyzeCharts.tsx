@@ -1,3 +1,3 @@
-export const AnalyzCharts = () => {
+export const AnalyzeCharts = () => {
 	return <div>AnalyzCharts</div>
 }
