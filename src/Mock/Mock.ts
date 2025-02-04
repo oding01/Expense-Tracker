@@ -1,4 +1,4 @@
-export const analyzeMockData = [
+export const consumptionData = [
 	{ category: '편의점', detail: '물', price: 1000, date: '2025-01-02' },
 	{
 		category: '병원',
