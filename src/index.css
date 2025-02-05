@@ -9,6 +9,13 @@
 	--breakpoint-desktop: 1440px;
 }
 
+@utility shadow-white-box {
+	box-shadow:
+		24px 24px 48px #74a2cc99,
+		inset -24px -24px 48px #c5deff,
+		inset 12px 12px 24px #e3efff;
+}
+
 * {
 	box-sizing: border-box;
 	font-family: 'Noto Sans', sans-serif;

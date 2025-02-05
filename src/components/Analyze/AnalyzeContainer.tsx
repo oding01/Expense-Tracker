@@ -4,8 +4,10 @@ import { consumptionData } from '@/Mock/Mock'
 
 export const AnalyzeContainer = () => {
 	return (
-		<div className='flex flex-col w-full h-full justify-center items-center flex-initial bg-white rounded-[3rem] shadow-[24px_24px_48px_#74a2cc99,inset_-24px_-24px_48px_#c5deff,inset_12px_12px_24px_#e3efff]'>
-			<AnalyzeCharts consumptionData={consumptionData} />
+		<div className='flex flex-col tablet:flex-row items-start gap-6 relative w-full mt-10'>
+			<div className='relative flex-1 min-w-auto tablet:min-w-[320px] w-full bg-white rounded-[3rem] shadow-white-box'>
+				<AnalyzeCharts consumptionData={consumptionData} />
+			</div>
 			<AnalyzeList />
 		</div>
 	)
