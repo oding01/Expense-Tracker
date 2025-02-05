@@ -11,10 +11,12 @@ export const AnalyzeCharts = ({
 	consumptionData: analyzeDataType[]
 }) => {
 	return (
-		<div className='relative flex-1 min-w-auto tablet:min-w-[320px] w-full bg-[#51b1ff] rounded-[3rem] shadow-blue-box'>
-			<div className='flex flex-col w-full h-full items-center justify-center font-extrabold text-white text-3xl tracking-[0] leading-normal]'>
-				<div>Charts</div>
-				<div className='min-h-96'></div>
+		<div className='flex flex-col w-full items-center flex-1'>
+			<div className='flex-1 font-extrabold text-black text-3xl tracking-[0] leading-normal'>
+				Chart
+			</div>
+			<div className='flex-initial flex flex-col items-center bg-[#D7E8FF] rounded-[1.5rem] w-full mx-20 mb-[3rem] shadow-white-box'>
+				<div className='min-h-[640px]'>차트</div>
 			</div>
 		</div>
 	)
