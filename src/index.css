@@ -7,13 +7,10 @@
 @theme {
 	--breakpoint-tablet: 744px;
 	--breakpoint-desktop: 1440px;
-}
-
-@utility shadow-white-box {
-	box-shadow:
-		24px 24px 48px #74a2cc99,
-		inset -24px -24px 48px #c5deff,
+	--shadow-white-box: 24px 24px 48px #74a2cc99, inset -24px -24px 48px #c5deff,
 		inset 12px 12px 24px #e3efff;
+	--shadow-blue-box: 0px 12px 24px #389dff99, inset -12px -12px 24px #0084ff,
+		inset 6px 6px 12px #49a6ff40;
 }
 
 * {

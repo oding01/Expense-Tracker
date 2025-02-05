@@ -8,7 +8,7 @@ const ConsumeList = () => {
 	]
 
 	return (
-		<div className='bg-[#5fb1ff] w-full h-[341px] rounded-[3rem] p-6 shadow-[0px_12px_24px_#389dff99,inset_-12px_-12px_24px_#0084ff,inset_6px_6px_12px_#49a6ff40]'>
+		<div className='bg-[#5fb1ff] w-full h-[341px] rounded-[3rem] p-6 shadow-blue-box'>
 			<div className='flex items-center gap-2 mb-5'>
 				<div className='flex text-white font-semibold text-2xl pl-4 leading-normal'>
 					최근 소비 내역
