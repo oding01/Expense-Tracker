@@ -5,12 +5,12 @@ import { consumptionData } from '@/Mock/Mock'
 
 export const AnalyzeContainer = () => {
 	return (
-		<div className='flex flex-col tablet:flex-row items-start gap-6 relative m-10 min-w-auto tablet:min-w-[320px] bg-white rounded-[3rem] shadow-white-box'>
-			<div className='flex flex-col flex-1'>
-				<AnalyzeChoice />
+		<div className='relative flex flex-col gap-6 m-10 min-w-auto tablet:min-w-[320px] tablet:flex-col bg-white rounded-[3rem] shadow-white-box'>
+			<AnalyzeChoice />
+			<div className='flex flex-1 flex-col tablet:flex-row w-full justify-center items-center px-10 gap-10'>
 				<AnalyzeCharts consumptionData={consumptionData} />
+				<AnalyzeList consumptionData={consumptionData} />
 			</div>
-			<AnalyzeList consumptionData={consumptionData} />
 		</div>
 	)
 }
