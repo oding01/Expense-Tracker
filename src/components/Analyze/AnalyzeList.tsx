@@ -11,13 +11,17 @@ export const AnalyzeList = ({
 	consumptionData: analyzeDataType[]
 }) => {
 	return (
-		<div className='flex flex-col w-full h-full tablet:mt-[6rem] items-center justify-center font-extrabold text-white text-3xl tracking-[0] leading-normal]'>
-			<div className='text-black mb-3'>List</div>
-			{consumptionData.map((data) => (
-				<>
-					<div className='flex-initial text-[#51b1ff]'>{data.category}</div>
-				</>
-			))}
+		<div className='flex flex-1 flex-col w-full items-center'>
+			<div className='flex-1 font-extrabold text-black text-3xl tracking-[0] leading-normal'>
+				List
+			</div>
+			<ul className='flex-initial flex flex-col items-center bg-[#D7E8FF] rounded-[1.5rem] w-full min-h-[620px] mb-[3rem] shadow-white-box'>
+				{consumptionData.map((data) => (
+					<>
+						<li className='flex-initial text-black'>{data.category}</li>
+					</>
+				))}
+			</ul>
 		</div>
 	)
 }
