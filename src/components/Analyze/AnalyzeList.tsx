@@ -4,7 +4,7 @@ import { useContext } from 'react'
 const color = ['#5fb1ff', '#fffc58', '#8fff5f', '#df0000']
 
 export const AnalyzeList = () => {
-	const consumptionData = useContext(AnalyzeContext)
+	const { consumptionData } = useContext(AnalyzeContext)
 	return (
 		<div className='flex flex-col w-full h-[500px] items-center flex-1'>
 			<div className='relative flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[10px] shadow-analyze-box w-full h-full tablet:p-[24px]'>
@@ -13,7 +13,7 @@ export const AnalyzeList = () => {
 				</div>
 				<div className='overscroll-y-auto overflow-hidden w-full h-full'>
 					<ul className='flex flex-col flex-initial w-full h-full mt-5 gap-10 overflow-y-scroll'>
-						{consumptionData.map((data, index) => (
+						{consumptionData?.map((data, index) => (
 							<>
 								<li className='flex flex-col flex-initial text-black'>
 									<div className='flex flex-1 justify-between'>
