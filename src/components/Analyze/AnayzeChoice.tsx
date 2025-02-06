@@ -1,12 +1,5 @@
 import { AnalyzeContext } from '@/components/Analyze/\bAnalyzeContext'
-import { useContext, useEffect, useState } from 'react'
-
-interface analyzeDataType {
-	category: string
-	detail: string
-	price: number
-	date: string
-}
+import { useContext } from 'react'
 
 const addComma = (price: number) => {
 	let returnString = price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
