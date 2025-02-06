@@ -11,12 +11,14 @@ export const AnalyzeCharts = ({
 	consumptionData: analyzeDataType[]
 }) => {
 	return (
-		<div className='flex flex-col w-full items-center flex-1'>
-			<div className='flex-1 font-extrabold text-black text-3xl tracking-[0] leading-normal'>
-				Chart
-			</div>
-			<div className='flex-initial flex flex-col items-center bg-[#D7E8FF] rounded-[1.5rem] w-full mx-20 mb-[3rem] shadow-white-box'>
-				<div className='min-h-[640px]'>차트</div>
+		<div className='flex flex-col w-full h-[500px] items-center flex-1'>
+			<div className='relative flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[70px] shadow-analyze-box w-full h-full'>
+				<div className='flex-initial font-semibold text-[#838383] text-2xl tracking-[0] leading-[normal] mt-5'>
+					카테고리별 차트
+				</div>
+				<div className='flex-initial w-full h-full flex justify-center'>
+					차트
+				</div>
 			</div>
 		</div>
 	)

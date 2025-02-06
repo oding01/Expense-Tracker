@@ -11,17 +11,17 @@ export const AnalyzeList = ({
 	consumptionData: analyzeDataType[]
 }) => {
 	return (
-		<div className='flex flex-1 flex-col w-full items-center'>
-			<div className='flex-1 font-extrabold text-black text-3xl tracking-[0] leading-normal'>
-				List
+		<div className='flex flex-col w-full h-[500px] items-center flex-1'>
+			<div className='relative flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[70px] shadow-analyze-box w-full h-full'>
+				<ul className='flex-initial font-semibold text-[#838383] text-2xl tracking-[0] leading-[normal] mt-5'>
+					카테고리별 지출액
+					{consumptionData.map((data) => (
+						<>
+							<li className='flex-initial text-black'>{data.category}</li>
+						</>
+					))}
+				</ul>
 			</div>
-			<ul className='flex-initial flex flex-col items-center bg-[#D7E8FF] rounded-[1.5rem] w-full min-h-[620px] mb-[3rem] shadow-white-box'>
-				{consumptionData.map((data) => (
-					<>
-						<li className='flex-initial text-black'>{data.category}</li>
-					</>
-				))}
-			</ul>
 		</div>
 	)
 }
