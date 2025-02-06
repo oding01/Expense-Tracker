@@ -1,4 +1,4 @@
-export const consumptionData = [
+export const consumptionMockData = [
 	{ category: '편의점', detail: '물', price: 1000, date: '2025-01-02' },
 	{
 		category: '병원',

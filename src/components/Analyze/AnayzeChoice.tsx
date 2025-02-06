@@ -1,9 +1,30 @@
+import { AnalyzeContext } from '@/components/Analyze/\bAnalyzeContext'
+import { useContext, useEffect, useState } from 'react'
+
+interface analyzeDataType {
+	category: string
+	detail: string
+	price: number
+	date: string
+}
+
 const addComma = (price: number) => {
 	let returnString = price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 	return returnString
 }
+function calculateTotalPrice(consumptionData: analyzeDataType[]) {
+	let totalPrice = 0
+	consumptionData.map((each) => (totalPrice += each.price))
+	return totalPrice
+}
+export const AnalyzeChoice = () => {
+	const [totalPrice, setTotalPrice] = useState(0)
 
-export const AnalyzeChoice = ({ totalPrice }: { totalPrice: number }) => {
+	const consumptionData = useContext(AnalyzeContext)
+
+	useEffect(() => {
+		setTotalPrice(calculateTotalPrice(consumptionData))
+	}, [])
 	return (
 		<div className='flex flex-initial flex-col tablet:flex-row gap-1 justify-start w-full tablet:gap-10 px-10'>
 			<div className='relative flex-1 flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[10px] shadow-analyze-box w-full h-full p-[20px]'>

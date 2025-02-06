@@ -1,17 +1,10 @@
-interface analyzeDataType {
-	category: string
-	detail: string
-	price: number
-	date: string
-}
+import { AnalyzeContext } from '@/components/Analyze/\bAnalyzeContext'
+import { useContext } from 'react'
 
 const color = ['#5fb1ff', '#fffc58', '#8fff5f', '#df0000']
 
-export const AnalyzeList = ({
-	consumptionData,
-}: {
-	consumptionData: analyzeDataType[]
-}) => {
+export const AnalyzeList = () => {
+	const consumptionData = useContext(AnalyzeContext)
 	return (
 		<div className='flex flex-col w-full h-[500px] items-center flex-1'>
 			<div className='relative flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[10px] shadow-analyze-box w-full h-full tablet:p-[24px]'>
