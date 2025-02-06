@@ -1,7 +1,7 @@
 export const AnalyzeChoice = () => {
 	return (
 		<div className='flex flex-initial flex-col tablet:flex-row gap-1 justify-start w-full tablet:gap-10 px-10'>
-			<div className='relative flex-1 flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[18px] shadow-analyze-box w-full h-full p-[20px]'>
+			<div className='relative flex-1 flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[10px] shadow-analyze-box w-full h-full p-[20px]'>
 				<div className='flex flex-col justify-between items-center tablet:flex-row flex-1 gap-2 w-full'>
 					<div className='flex flex-1 flex-col'>
 						<label
@@ -31,7 +31,7 @@ export const AnalyzeChoice = () => {
 					</div>
 				</div>
 			</div>
-			<div className='relative flex flex-1 flex-row justify-start items-center bg-[#f6f6f7] rounded-[18px] shadow-analyze-box w-full h-full p-[20px]'>
+			<div className='relative flex flex-1 flex-row justify-start items-center bg-[#f6f6f7] rounded-[10px] shadow-analyze-box w-full h-full p-[20px]'>
 				<div className='ml-3 flex flex-1 flex-col'>
 					<label
 						className='text-[#838383] text-base font-medium tracking-wide'
