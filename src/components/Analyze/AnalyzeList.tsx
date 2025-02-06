@@ -14,7 +14,7 @@ export const AnalyzeList = ({
 }) => {
 	return (
 		<div className='flex flex-col w-full h-[500px] items-center flex-1'>
-			<div className='relative flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[50px] shadow-analyze-box w-full h-full tablet:p-[24px]'>
+			<div className='relative flex flex-col justify-start items-center bg-[#f6f6f7] rounded-[10px] shadow-analyze-box w-full h-full tablet:p-[24px]'>
 				<div className='font-semibold text-[#838383] text-2xl tracking-[0] leading-[normal] '>
 					카테고리별 지출액
 				</div>
