@@ -1,7 +1,7 @@
-import { AnaylzeProvider } from '@/components/Analyze/\bAnalyzeContext'
+import { AnalyzeProvider } from '@/components/Analyze/AnalyzeContext'
 import { AnalyzeCharts } from '@/components/Analyze/AnalyzeCharts'
 import { AnalyzeList } from '@/components/Analyze/AnalyzeList'
-import { AnalyzeChoice } from '@/components/Analyze/AnayzeChoice'
+import { AnalyzeChoice } from '@/components/Analyze/AnalyzeChoice'
 
 export const AnalyzeContainer = () => {
 	return (
@@ -9,13 +9,13 @@ export const AnalyzeContainer = () => {
 			<div className='flex-initial text-[36px] pl-10 font-semibold text-black text-4xl tracking-[0] leading-[normal] whitespace-nowrap'>
 				지출 분석
 			</div>
-			<AnaylzeProvider>
+			<AnalyzeProvider>
 				<AnalyzeChoice />
 				<div className='flex flex-1 flex-col tablet:flex-row w-full justify-center items-center px-10 gap-10'>
 					<AnalyzeCharts />
 					<AnalyzeList />
 				</div>
-			</AnaylzeProvider>
+			</AnalyzeProvider>
 		</div>
 	)
 }

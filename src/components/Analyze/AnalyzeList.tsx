@@ -1,4 +1,4 @@
-import { AnalyzeContext } from '@/components/Analyze/\bAnalyzeContext'
+import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
 import { useContext } from 'react'
 
 const color = ['#5fb1ff', '#fffc58', '#8fff5f', '#df0000']
