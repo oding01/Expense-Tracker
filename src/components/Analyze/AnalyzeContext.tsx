@@ -1,12 +1,6 @@
 import { useAnalyzeStore } from '@/components/store/AnalyzeStore'
+import { analyzeDataType } from '@/types/type'
 import { createContext } from 'react'
-
-interface analyzeDataType {
-	category: string
-	detail: string
-	price: number
-	date: string
-}
 
 interface AnalyzeContextType {
 	consumptionData?: analyzeDataType[]
@@ -21,7 +15,7 @@ function calculateTotalPrice(consumptionData: analyzeDataType[]) {
 	return totalPrice
 }
 
-export const AnaylzeProvider = ({
+export const AnalyzeProvider = ({
 	children,
 }: {
 	children: React.ReactNode

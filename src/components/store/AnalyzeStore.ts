@@ -1,12 +1,6 @@
 import { create } from 'zustand'
 import { consumptionMockData } from '@/Mock/Mock'
-
-interface analyzeDataType {
-	category: string
-	detail: string
-	price: number
-	date: string
-}
+import { analyzeDataType } from '@/types/type'
 
 interface AnalyzeStoreType {
 	consumptionData: analyzeDataType[]

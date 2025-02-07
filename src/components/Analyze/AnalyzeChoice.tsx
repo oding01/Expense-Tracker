@@ -1,8 +1,8 @@
-import { AnalyzeContext } from '@/components/Analyze/\bAnalyzeContext'
+import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
 import { useContext } from 'react'
 
-const addComma = (price: number) => {
-	let returnString = price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+const addComma = (price: number | undefined): string | undefined => {
+	let returnString = price?.toLocaleString('ko-KR')
 	return returnString
 }
 
@@ -55,7 +55,7 @@ export const AnalyzeChoice = () => {
 				</div>
 				<div className='flex justify-between mr-5'>
 					<div className='font-semibold text-2xl'>
-						{addComma(totalPrice ? totalPrice : 0)}원
+						{addComma(totalPrice ?? 0)}원
 					</div>
 				</div>
 			</div>
