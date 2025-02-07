@@ -11,6 +11,9 @@
 		inset 12px 12px 24px #e3efff;
 	--shadow-blue-box: 0px 12px 24px #389dff99, inset -12px -12px 24px #0084ff,
 		inset 6px 6px 12px #49a6ff40;
+	--shadow-analyze-box: -2px -2px 2px 0px #fff inset,
+		2px 2px 2px 0px rgba(0, 0, 0, 0.1) inset;
+	--shadow-analyze-chart: 4px 0px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 * {
