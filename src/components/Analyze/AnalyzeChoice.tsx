@@ -1,10 +1,6 @@
 import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
+import { addComma } from '@/utils/money'
 import { useContext } from 'react'
-
-const addComma = (price: number | undefined): string | undefined => {
-	let returnString = price?.toLocaleString('ko-KR')
-	return returnString
-}
 
 export const AnalyzeChoice = () => {
 	const { totalPrice } = useContext(AnalyzeContext)
