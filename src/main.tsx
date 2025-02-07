@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import { Analyze } from '@/pages/Analyze'
 import Home from '@/pages/Home'
 import Layout from '@/shared/Layout'
-import Input from '@/components/Input/input'
+import { Input } from '@/pages/Input'
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
