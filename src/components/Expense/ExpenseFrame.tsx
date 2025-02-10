@@ -41,7 +41,7 @@ export const ExpenseFrame = ({
 
 	return (
 		<div
-			className={`w-full h-36 bg-white rounded-[3rem] shadow-white-box ${className}`}
+			className={`w-full h-36 bg-gray-50 rounded-[3rem] shadow-white-box ${className}`}
 		>
 			<div className='flex flex-col w-full items-start gap-2 relative pt-5 pl-12'>
 				<h2
