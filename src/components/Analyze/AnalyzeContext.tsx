@@ -1,4 +1,5 @@
 import { useAnalyzeStore } from '@/components/store/AnalyzeStore'
+import { chartColors } from '@/Mock/Mock'
 import { analyzeCombinedDataType, analyzeDataType } from '@/types/type'
 import { createContext } from 'react'
 
@@ -7,6 +8,14 @@ interface AnalyzeContextType {
 	totalPrice?: number
 	progressBarWidth?: string[]
 	consumptionCombinedData?: analyzeCombinedDataType[]
+	doughnutChartData?: ChartDataType[]
+}
+
+interface ChartDataType {
+	id: string
+	label: string
+	value: number
+	color: string
 }
 
 export const AnalyzeContext = createContext<AnalyzeContextType>({})
@@ -34,6 +43,15 @@ export const AnalyzeProvider = ({
 		(state) => state.consumptionCombinedData,
 	)
 
+	const doughnutChartData: ChartDataType[] = consumptionCombinedData.map(
+		(each, index) => ({
+			id: each.category,
+			label: each.category,
+			value: each.price,
+			color: chartColors[index % 4],
+		}),
+	)
+
 	const totalPrice = consumptionData.reduce(
 		(total, each) => total + each.price,
 		0,
@@ -47,6 +65,7 @@ export const AnalyzeProvider = ({
 				totalPrice,
 				progressBarWidth,
 				consumptionCombinedData,
+				doughnutChartData,
 			}}
 		>
 			{children}
