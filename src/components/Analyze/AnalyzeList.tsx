@@ -1,8 +1,7 @@
 import { useEffect, useState, useContext } from 'react'
 import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
 import { addComma } from '@/utils/money'
-
-const color = ['#5fb1ff', '#fffc58', '#8fff5f', '#df0000']
+import { chartColors } from '@/Mock/Mock'
 
 interface widthType {
 	[key: number]: string
@@ -14,6 +13,7 @@ export const AnalyzeList = () => {
 
 	const [animatedWidth, setAnimatedWidth] = useState<widthType>({})
 
+	//width 기존에 0 걸어놓고, 필요한 width로 변경해서 transition 출력
 	useEffect(() => {
 		if (!consumptionCombinedData) return
 		const updatedWidths = consumptionCombinedData.reduce<widthType>(
@@ -52,7 +52,7 @@ export const AnalyzeList = () => {
 										className='h-[35px] rounded-[10px] shadow-analyze-progress-bar transition-[width] duration-400 ease-in-out'
 										style={{
 											width: animatedWidth[data.id] || '0%',
-											backgroundColor: color[data.id % 4],
+											backgroundColor: chartColors[data.id % 4],
 										}}
 									/>
 								</div>

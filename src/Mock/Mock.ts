@@ -16,3 +16,5 @@ export const consumptionMockData = [
 		date: '2025-01-31',
 	},
 ]
+
+export const chartColors = ['#5fb1ff', '#fffc58', '#8fff5f', '#df0000']

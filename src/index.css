@@ -15,7 +15,6 @@
 
 	--shadow-analyze-box: -2px -2px 2px 0px #fff,
 		inset 2px 2px 2px 0px rgba(0, 0, 0, 0.1);
-	/* --shadow-analyze-chart: 4px 0px 16px 0px rgba(0, 0, 0, 0.2); */
 	--shadow-analyze-chart: 5px 0px 5px -5px rgba(0, 0, 0, 0.2),
 		0px 5px 5px -5px rgba(0, 0, 0, 0.2), 5px 0px 5px -5px rgba(0, 0, 0, 0.2);
 	--shadow-analyze-progress-bar: 4px 0px 4px 0px rgba(0, 0, 0, 0.2);
