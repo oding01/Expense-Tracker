@@ -11,7 +11,9 @@ export const AnalyzeContainer = () => {
 			</div>
 			<AnalyzeProvider>
 				<AnalyzeChoice />
-				<div className='flex flex-1 flex-col tablet:flex-row w-full justify-center items-center px-10 gap-10'>
+				<div
+					className='flex flex-1 flex-col tablet:flex-row w-full justify-center items-center px-10 gap-10 min-h-[500px] h-full overflow-auto '
+				>
 					<AnalyzeCharts />
 					<AnalyzeList />
 				</div>
