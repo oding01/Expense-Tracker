@@ -25,6 +25,7 @@ const InputContainer = () => {
 
 					<div className='flex flex-col w-full h-full gap-14 tablet:flex-row'>
 						<div className='flex flex-col flex-1'>
+							<CategorySelect name='category' />
 							<InputField
 								type='number'
 								label='사용 금액'
@@ -32,8 +33,8 @@ const InputContainer = () => {
 								name='amount'
 							/>
 							<InputField label='사용처' name='place' />
-							<CategorySelect name='category' />
 						</div>
+
 						<div className='flex flex-col flex-1'>
 							<InputField label='사용한 날짜' type='date' name='date' />
 							<InputField label='메모' tagName='textarea' name='memo' />

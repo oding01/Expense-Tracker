@@ -44,17 +44,15 @@ const CategorySelect = ({ name }: ICategoryProps) => {
 			</div>
 			<div className='relative flex rounded-[15px] w-full h-16 bg-[#F7F7F8] shadow-analyze-box tablet:flex-row flex-1'>
 				<Listbox value={selectedCategory} onChange={onChange}>
-					<ListboxButton className='relative flex w-full items-center justify-between rounded-[15px] bg-transparent py-4 px-5 text-xl text-gray-900 focus:ring-2 focus:ring-[#5FB1FF] focus:ring-inset focus:outline-none'>
+					<ListboxButton className='relative flex w-full items-center justify-between rounded-[15px] bg-transparent py-4 px-5 text-xl text-gray-900 focus:ring-2 focus:ring-[#5FB1FF] focus:ring-inset focus:outline-none '>
 						<span className='text-xl'>{selectedCategory.name}</span>
 						<ChevronDown className='h-5 w-5 text-gray-500' />
 					</ListboxButton>
 					<ListboxOptions
 						anchor='bottom'
 						transition
-						className={`
-            w-[var(--button-width)] rounded-xl border border-gray-200 bg-white p-1 [--anchor-gap:var(--spacing-1)] focus:outline-none
-            transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0 shadow-lg
-          `}
+						className={`w-[var(--button-width)] h-36 rounded-xl border border-gray-200 bg-white p-1 [--anchor-gap:var(--spacing-1)] focus:outline-none
+            transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0 shadow-lg overflow-y-auto`}
 					>
 						{categories.map((category) => (
 							<ListboxOption
