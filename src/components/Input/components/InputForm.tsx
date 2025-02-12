@@ -1,6 +1,6 @@
 import { insertData } from '@/api/api'
 import { IInputFormData } from '@/types/type'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import * as React from 'react'
 import { SubmitHandler, useFormContext } from 'react-hook-form'
 
