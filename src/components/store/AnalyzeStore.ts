@@ -2,9 +2,18 @@ import { create } from 'zustand'
 import { consumptionMockData } from '@/Mock/Mock'
 import { analyzeCombinedDataType, analyzeDataType } from '@/types/type'
 
-interface AnalyzeStoreType {
+interface AnalyzeState {
 	consumptionData: analyzeDataType[]
 	consumptionCombinedData: analyzeCombinedDataType[]
+	startDate: Date
+	endDate: Date
+}
+
+interface AnalyzeActions {
+	actions: {
+		setStartDate: (date: Date) => void
+		setEndDate: (date: Date) => void
+	}
 }
 
 // 카테고리별 뭉치고 가격 합산
@@ -32,8 +41,19 @@ const combiningData = (
 	return consumptionCombinedData.sort((a, b) => b.price - a.price)
 }
 
-export const useAnalyzeStore = create<AnalyzeStoreType>(() => ({
-	//consumptionData DB에서 get해온 따끈따끈한 raw data여야 맞을 듯
+type AnalyzeStore = AnalyzeState & AnalyzeActions
+
+export const useAnalyzeStore = create<AnalyzeStore>((set) => ({
 	consumptionData: consumptionMockData,
 	consumptionCombinedData: combiningData(consumptionMockData),
+	startDate: new Date(),
+	endDate: new Date(),
+	actions: {
+		setStartDate: (date: Date) => {
+			set(() => ({ startDate: date }))
+		},
+		setEndDate: (date: Date) => {
+			set(() => ({ endDate: date }))
+		},
+	},
 }))
