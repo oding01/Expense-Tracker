@@ -1,6 +1,7 @@
 import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
 import { addComma } from '@/utils/money'
 import { useContext } from 'react'
+import totalPriceImage from '@/images/totalPrice.svg'
 
 export const AnalyzeChoice = () => {
 	const { totalPrice } = useContext(AnalyzeContext)
@@ -44,10 +45,7 @@ export const AnalyzeChoice = () => {
 					>
 						총 지출액
 					</label>
-					<img
-						src='./src/images/totalPrice.svg'
-						className='w-[34px] h-[32px]'
-					></img>
+					<img src={totalPriceImage} className='w-[34px] h-[32px]'></img>
 				</div>
 				<div className='flex justify-between mr-5 h-full items-center'>
 					<div className='font-semibold text-lg mobile:text-2xl'>
