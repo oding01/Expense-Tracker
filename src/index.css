@@ -8,7 +8,6 @@
 	--breakpoint-tablet: 744px;
 	--breakpoint-desktop: 1440px;
 	--breakpoint-mobile: 393px;
-	--breakpoint-analyzechoice: 1100px;
 	--shadow-white-box: -12px -12px 24px 0 #c5deff inset;
 	--shadow-blue-box: 0px 12px 24px #389dff99, inset -12px -12px 24px #0084ff,
 		inset 6px 6px 12px #49a6ff40;
@@ -18,11 +17,13 @@
 	--shadow-analyze-chart: 5px 0px 5px -5px rgba(0, 0, 0, 0.2),
 		0px 5px 5px -5px rgba(0, 0, 0, 0.2), 5px 0px 5px -5px rgba(0, 0, 0, 0.2);
 	--shadow-analyze-progress-bar: 4px 0px 4px 0px rgba(0, 0, 0, 0.2);
-
 	--shadow-submit-button: inset 2px 2px 4px 0px #49a6ff,
 		inset -4px -4px 8px 0px #0083ff;
 }
 
+h2.react-datepicker__current-month {
+	text-align: center;
+}
 * {
 	box-sizing: border-box;
 	font-family: 'Noto Sans', sans-serif;
