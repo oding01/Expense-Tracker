@@ -1,17 +1,41 @@
 import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
 import { DatePick } from '@/utils/DatePick'
 import { addComma } from '@/utils/money'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import totalPriceImage from '@/images/totalPrice.svg'
+import { useQuery } from '@tanstack/react-query'
+import { getSpendingData } from '@/api/api'
 
 export const AnalyzeChoice = () => {
-	const {
-		totalPrice,
-		startDate,
-		endDate,
-		handleSetStartDate,
-		handleSetEndDate,
-	} = useContext(AnalyzeContext)
+	const { totalPrice, setSpendingData } = useContext(AnalyzeContext)
+	const [startDate, setStartDate] = useState(new Date())
+	const [endDate, setEndDate] = useState(new Date())
+
+	const { data: spendingDataInDB } = useQuery({
+		queryKey: ['spending', startDate.toISOString(), endDate.toISOString()],
+		queryFn: () => getSpendingData(startDate, endDate),
+		staleTime: 60 * 1000,
+	})
+
+	const handleSetStartDate = (date: Date | null) => {
+		if (!date) {
+			alert('날짜를 선택해주세요')
+			return
+		}
+		setStartDate(date)
+	}
+
+	const handleSetEndDate = (date: Date | null) => {
+		if (!date) {
+			alert('날짜를 선택해주세요')
+			return
+		}
+		setEndDate(date)
+	}
+
+	useEffect(() => {
+		setSpendingData(spendingDataInDB ?? [])
+	}, [spendingDataInDB, setSpendingData])
 
 	return (
 		<div className='flex flex-initial flex-col tablet:flex-row gap-1 justify-start w-full tablet:gap-10 px-10'>

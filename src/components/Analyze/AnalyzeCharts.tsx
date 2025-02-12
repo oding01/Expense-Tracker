@@ -7,7 +7,7 @@ export const AnalyzeCharts = () => {
 				<div className='flex-1 font-semibold text-[#838383] text-2xl tracking-[0] leading-[normal] mt-5'>
 					카테고리별 차트
 				</div>
-				<div className='flex-initial w-full h-full min-w-[200px] min-h-[200px] aspect-square'>
+				<div className='flex-initial w-full h-full min-w-[200px] min-h-[200px] aspect-square overflow-x-scroll'>
 					<DoughnutChart />
 				</div>
 			</div>

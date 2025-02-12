@@ -24,6 +24,10 @@
 h2.react-datepicker__current-month {
 	text-align: center;
 }
+
+.react-datepicker-wrapper {
+	width: min-content;
+}
 * {
 	box-sizing: border-box;
 	font-family: 'Noto Sans', sans-serif;

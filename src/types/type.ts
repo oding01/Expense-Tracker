@@ -1,10 +1,3 @@
-export interface analyzeDataType {
-	category: string
-	detail: string
-	price: number
-	date: string
-}
-
 export interface IInputFormData {
 	inputType: 'income' | 'spending'
 	amount: number
@@ -20,8 +13,17 @@ export interface ICategory {
 	name: string
 }
 
-export interface analyzeCombinedDataType {
+export interface ChartDataType {
+	id: string
+	label: string
+	value: number
+	color: string
+}
+
+export interface SpendingDataInDBProps {
+	category_id: number | null
+	category_name: string
+	date: string
 	id: number
-	category: string
-	price: number
+	total_amount: number
 }
