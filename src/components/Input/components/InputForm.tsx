@@ -1,4 +1,6 @@
+import { insertData } from '@/api/api'
 import { IInputFormData } from '@/types/type'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import * as React from 'react'
 import { SubmitHandler, useFormContext } from 'react-hook-form'
 
@@ -6,8 +8,18 @@ import { SubmitHandler, useFormContext } from 'react-hook-form'
 const InputForm = ({ children }: { children: React.ReactNode }) => {
 	const { handleSubmit } = useFormContext<IInputFormData>()
 
+	const { mutate, isPending } = useMutation({
+		mutationFn: insertData,
+		onSuccess: () => {
+			alert('저장이 완료되었습니다.')
+		},
+		onError: () => {
+			alert('저장에 실패하였습니다. 다시 시도해주세요.')
+		},
+	})
+
 	const onSubmit: SubmitHandler<IInputFormData> = (data) => {
-		console.log(data)
+		mutate(data)
 	}
 
 	return (
@@ -22,7 +34,7 @@ const InputForm = ({ children }: { children: React.ReactNode }) => {
 					className='flex items-center justify-center w-36 h-16 rounded-2xl text-2xl tracking-wide shadow-submit-button bg-[#5FB1FF] text-white float-right
 				cursor-pointer hover:bg-blue-400 active:shadow-inner active:translate-y-0.5 active:bg-blue-400 transition-all duration-150'
 				>
-					확인
+					{isPending ? '저장중' : '확인'}
 				</button>
 			</form>
 		</div>
