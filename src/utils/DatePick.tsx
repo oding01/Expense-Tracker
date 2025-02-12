@@ -49,7 +49,6 @@ export const DatePick = ({
 	iconSize = 20,
 }: DatePickProps) => {
 	const [open, setOpen] = useState(false)
-
 	const handleOnSelect = (date: Date | null) => {
 		setOpen(false)
 		handleSelect(date)

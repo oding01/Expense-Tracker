@@ -8,22 +8,20 @@ interface widthType {
 }
 
 export const AnalyzeList = () => {
-	const { progressBarWidth, consumptionCombinedData } =
-		useContext(AnalyzeContext)
-
+	const { progressBarWidth, spendingData } = useContext(AnalyzeContext)
 	const [animatedWidth, setAnimatedWidth] = useState<widthType>({})
 
 	//width 기존에 0 걸어놓고, 필요한 width로 변경해서 transition 출력
 	useEffect(() => {
-		if (!progressBarWidth || !consumptionCombinedData) return
+		if (!progressBarWidth || !spendingData) return
 		const updatedWidths = Object.fromEntries(
-			consumptionCombinedData.map((each) => [
+			spendingData.map((each) => [
 				each.id,
 				`${progressBarWidth[each.id] ?? 0}%`,
 			]),
 		)
 		setAnimatedWidth(updatedWidths)
-	}, [consumptionCombinedData, progressBarWidth])
+	}, [spendingData, progressBarWidth])
 
 	return (
 		<div className='flex flex-col w-full h-[500px] items-center flex-1'>
@@ -33,17 +31,17 @@ export const AnalyzeList = () => {
 				</div>
 				<div className='overscroll-y-auto overflow-hidden w-full h-full px-[20px]'>
 					<ul className='flex flex-col flex-initial w-full h-full mt-5 gap-10 overflow-y-scroll pb-10'>
-						{consumptionCombinedData?.map((data) => (
+						{spendingData?.map((data, idx) => (
 							<li
 								key={data.id}
 								className='flex flex-col flex-initial text-black'
 							>
 								<div className='flex flex-1 justify-between'>
 									<div className='text-[#675f5f] text-[26px] font-medium'>
-										{data.category}
+										{data.category_name}
 									</div>
 									<div className='text-black text-2xl font-medium flex items-center'>
-										{addComma(data.price)}
+										{addComma(data.total_amount)}
 									</div>
 								</div>
 								<div className='flex-1 w-full h-[35px] bg-[#e8e8e8] rounded-[10px] shadow-analyze-chart'>
@@ -51,8 +49,7 @@ export const AnalyzeList = () => {
 										className='h-[35px] rounded-[10px] shadow-analyze-progress-bar transition-[width] duration-400 ease-in-out'
 										style={{
 											width: animatedWidth[data.id] || '0%',
-											backgroundColor:
-												chartColors[data.id % chartColors.length],
+											backgroundColor: chartColors[idx % chartColors.length],
 										}}
 									/>
 								</div>

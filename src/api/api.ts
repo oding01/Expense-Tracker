@@ -27,7 +27,9 @@ export const insertData = async (input: IInputFormData) => {
 		date: input.date,
 	}
 
-	const { data, error } = await supabase.from('expense_list').insert(requestData)
+	const { data, error } = await supabase
+		.from('expense_list')
+		.insert(requestData)
 
 	if (error) {
 		throw error
@@ -35,4 +37,13 @@ export const insertData = async (input: IInputFormData) => {
 		console.log('Data inserted Success: ', data)
 	}
 	return true
+}
+
+export async function getSpendingData(startDate: Date, endDate: Date) {
+	let { data: category_spending_stats } = await supabase
+		.from('category_spending_stats')
+		.select('*')
+		.gte('date', startDate.toISOString())
+		.lte('date', endDate.toISOString())
+	return category_spending_stats
 }

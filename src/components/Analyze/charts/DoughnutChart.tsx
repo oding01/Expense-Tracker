@@ -1,37 +1,45 @@
 import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
 import { chartColors } from '@/Mock/Mock'
+import { ChartDataType } from '@/types/type'
 import { ResponsivePie } from '@nivo/pie'
-import { useContext, useEffect, useState } from 'react' // Import useEffect and useState
-
-interface ChartDataType {
-	id: string
-	label: string
-	value: number
-	color: string
-}
+import { useContext, useEffect, useState } from 'react'
 
 export const DoughnutChart = () => {
-	const { doughnutChartData } = useContext(AnalyzeContext)
+	const { spendingData } = useContext(AnalyzeContext)
 	const [animatedData, setAnimatedData] = useState<ChartDataType[]>([])
 
+	const firstRow: ChartDataType[] = []
+	const secondRow: ChartDataType[] = []
+
+	if (!spendingData) return
+	const chartData: ChartDataType[] = spendingData.map((each, idx) => {
+		const eachChartData = {
+			id: each.category_name,
+			label: each.category_name,
+			value: each.total_amount,
+			color: chartColors[idx % chartColors.length],
+		}
+		if (spendingData.length >= 5 && idx <= spendingData.length / 2)
+			firstRow.push(eachChartData)
+		else secondRow.push(eachChartData)
+		return eachChartData
+	})
 	//차트가 변해야 애니메이션이 출력됨, default값을 넣고 0.05초뒤 필요한 값을 넣음
 	useEffect(() => {
-		if (!doughnutChartData) return
-		const initialData: ChartDataType[] = doughnutChartData.map((item) => ({
-			...item,
+		const initialData: ChartDataType[] = chartData?.map((data) => ({
+			...data,
 			value: 0,
 		}))
+
 		setAnimatedData(initialData)
 
 		const timeoutId = setTimeout(() => {
-			setAnimatedData(doughnutChartData)
+			setAnimatedData(chartData)
 		}, 50)
-		return () => clearTimeout(timeoutId)
-	}, [doughnutChartData])
 
-	if (animatedData.length === 0) {
-		return null
-	}
+		return () => clearTimeout(timeoutId)
+	}, [spendingData])
+
 	return (
 		<ResponsivePie
 			data={animatedData}
@@ -39,7 +47,7 @@ export const DoughnutChart = () => {
 			innerRadius={0.5}
 			padAngle={0.7}
 			cornerRadius={3}
-			colors={chartColors}
+			colors={animatedData.map((each) => each.color)}
 			activeOuterRadiusOffset={9}
 			borderWidth={1}
 			borderColor={{
@@ -57,21 +65,45 @@ export const DoughnutChart = () => {
 				modifiers: [['darker', 2]],
 			}}
 			animate={true}
-			motionConfig='slow'
 			legends={[
 				{
+					data: firstRow,
 					anchor: 'bottom',
 					direction: 'row',
 					justify: false,
 					translateX: 0,
 					translateY: 30,
-					itemsSpacing: 0,
+					itemsSpacing: 5,
 					itemWidth: 55,
-					itemHeight: 50,
+					itemHeight: 35,
 					itemTextColor: '#999',
 					itemDirection: 'left-to-right',
 					itemOpacity: 1,
-					symbolSize: 12,
+					symbolSize: 8,
+					symbolShape: 'circle',
+					effects: [
+						{
+							on: 'hover',
+							style: {
+								itemTextColor: '#000',
+							},
+						},
+					],
+				},
+				{
+					data: secondRow,
+					anchor: 'bottom',
+					direction: 'row',
+					justify: false,
+					translateX: 0,
+					translateY: 60,
+					itemsSpacing: 5,
+					itemWidth: 55,
+					itemHeight: 35,
+					itemTextColor: '#999',
+					itemDirection: 'left-to-right',
+					itemOpacity: 1,
+					symbolSize: 8,
 					symbolShape: 'circle',
 					effects: [
 						{
