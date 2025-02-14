@@ -48,6 +48,4 @@ const InputTypeToggle = ({ name }: ITypeToggleProps) => {
 	)
 }
 
-InputTypeToggle.displayName = 'InputTypeToggle'
-
 export default InputTypeToggle

@@ -1,7 +1,9 @@
 import CategorySelect from '@/components/Input/components/CategorySelect'
+import DatePickerField from '@/components/Input/components/DatePickerField'
 import InputField from '@/components/Input/components/InputField'
 import InputForm from '@/components/Input/components/InputForm'
 import InputTypeToggle from '@/components/Input/components/InputTypeToggle'
+import TextAreaField from '@/components/Input/components/TextAreaField'
 import { incomeCategories } from '@/constants/categories'
 import { IInputFormData } from '@/types/type'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -17,6 +19,7 @@ const InputContainer = () => {
 			memo: '',
 		},
 	})
+
 	return (
 		<FormProvider {...methods}>
 			<div className='relative flex flex-col gap-6 w-full min-w-auto tablet:min-w-[320px] tablet:flex-col bg-gray-50 rounded-[3rem] shadow-2xl'>
@@ -36,8 +39,8 @@ const InputContainer = () => {
 						</div>
 
 						<div className='flex flex-col flex-1'>
-							<InputField label='사용한 날짜' type='date' name='date' />
-							<InputField label='메모' tagName='textarea' name='memo' />
+							<DatePickerField label='날짜' name='date' />
+							<TextAreaField label='메모' name='memo' />
 						</div>
 					</div>
 				</InputForm>
