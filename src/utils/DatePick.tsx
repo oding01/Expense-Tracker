@@ -27,6 +27,7 @@ const DateInput = forwardRef<HTMLButtonElement, DateInputProps>(
 
 		return (
 			<button
+				type='button'
 				className={`hover:bg-gray-200 hover:duration-300 inline-flex ${textSize} items-center whitespace-nowrap gap-1`}
 				onClick={onClick}
 				ref={ref}
@@ -48,6 +49,11 @@ export const DatePick = ({
 	iconSize = 20,
 }: DatePickProps) => {
 	const [open, setOpen] = useState(false)
+
+	const handleOnSelect = (date: Date | null) => {
+		setOpen(false)
+		handleSelect(date)
+	}
 	return (
 		<DatePicker
 			//이거 해야 타입 오류 안뜸
@@ -69,10 +75,7 @@ export const DatePick = ({
 			maxDate={maxDate}
 			onInputClick={() => setOpen(true)}
 			onClickOutside={() => setOpen(false)}
-			onSelect={(date) => {
-				setOpen(false)
-				handleSelect(date)
-			}}
+			onSelect={handleOnSelect}
 			shouldCloseOnSelect={true}
 			closeOnScroll={true}
 		/>
