@@ -1,5 +1,5 @@
 import { ICategory, IInputFormData } from '@/types/type'
-import { Json } from 'database.types'
+import { Json } from 'supabase/database.types'
 import supabase from 'supabase/supabase'
 
 interface RequestValue {
@@ -27,7 +27,7 @@ export const insertData = async (input: IInputFormData) => {
 		date: input.date,
 	}
 
-	const { data, error } = await supabase.from('expenseList').insert(requestData)
+	const { data, error } = await supabase.from('expense_list').insert(requestData)
 
 	if (error) {
 		throw error
