@@ -9,6 +9,30 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      accounts: {
+        Row: {
+          created_at: string | null
+          id: string
+          password: string
+          uid: string
+          user_name: string
+        }
+        Insert: {
+          created_at?: string | null
+          id: string
+          password: string
+          uid?: string
+          user_name: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          password?: string
+          uid?: string
+          user_name?: string
+        }
+        Relationships: []
+      }
       category_spending_stats: {
         Row: {
           category_id: number | null
@@ -42,6 +66,7 @@ export type Database = {
           input_type: string
           memo: string | null
           place: string | null
+          uid: string | null
         }
         Insert: {
           amount: number
@@ -51,6 +76,7 @@ export type Database = {
           input_type: string
           memo?: string | null
           place?: string | null
+          uid?: string | null
         }
         Update: {
           amount?: number
@@ -60,8 +86,17 @@ export type Database = {
           input_type?: string
           memo?: string | null
           place?: string | null
+          uid?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "fk_accounts_uid"
+            columns: ["uid"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["uid"]
+          },
+        ]
       }
     }
     Views: {
