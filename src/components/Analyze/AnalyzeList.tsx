@@ -1,7 +1,8 @@
 import { useEffect, useState, useContext } from 'react'
 import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
 import { addComma } from '@/utils/money'
-import { chartColors } from '@/Mock/Mock'
+import { chartColors } from '@/utils/chartColors'
+
 
 interface widthType {
 	[key: number]: string

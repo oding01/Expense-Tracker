@@ -1,5 +1,5 @@
-import CategoryChart from '@/components/Expense/CategoryChart'
 import { Expense } from '@/components/Expense/Expense'
+import ExpenseChart from '@/components/Expense/ExpenseChart'
 
 export const ExpenseContainer = (): JSX.Element => {
 	return (
@@ -7,8 +7,8 @@ export const ExpenseContainer = (): JSX.Element => {
 			<div className='relative flex-1 min-w-auto tablet:min-w-[320px] w-full'>
 				<Expense />
 			</div>
-			<div className='relative flex-1 min-w-auto tablet:min-w-[320px] w-full'>
-				<CategoryChart />
+			<div className='relative flex-1 min-w-auto tablet:min-w-[320px] w-full '>
+				<ExpenseChart />
 			</div>
 		</div>
 	)
