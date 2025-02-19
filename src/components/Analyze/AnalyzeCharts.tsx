@@ -1,4 +1,4 @@
-import { DoughnutChart } from '@/components/Analyze/charts/DoughnutChart'
+import { AnalyzeDoughnutChart } from '@/components/Analyze/charts/AnalyzeDoughnutChart'
 
 export const AnalyzeCharts = () => {
 	return (
@@ -8,7 +8,7 @@ export const AnalyzeCharts = () => {
 					카테고리별 차트
 				</div>
 				<div className='flex-initial w-full h-full min-w-[200px] min-h-[200px] aspect-square overflow-x-scroll'>
-					<DoughnutChart />
+					<AnalyzeDoughnutChart />
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,5 @@
 import { ICategory, IInputFormData } from '@/types/type'
+import { dateToKorean } from '@/utils/dateToKorean'
 import { Json } from 'supabase/database.types'
 import supabase from 'supabase/supabase'
 
@@ -39,11 +40,13 @@ export const insertData = async (input: IInputFormData) => {
 	return true
 }
 
-export async function getSpendingData(startDate: Date, endDate: Date) {
+export const getSpendingData = async (startDate: Date, endDate: Date) => {
+	const korStartDate = dateToKorean(startDate)
+	const korEndDate = dateToKorean(endDate)
 	let { data: category_spending_stats } = await supabase
 		.from('category_spending_stats')
 		.select('*')
-		.gte('date', startDate.toISOString())
-		.lte('date', endDate.toISOString())
+		.gte('date', korStartDate)
+		.lte('date', korEndDate)
 	return category_spending_stats
 }

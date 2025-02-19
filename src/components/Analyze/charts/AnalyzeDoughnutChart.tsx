@@ -1,10 +1,11 @@
 import { AnalyzeContext } from '@/components/Analyze/AnalyzeContext'
-import { chartColors } from '@/Mock/Mock'
+
 import { ChartDataType } from '@/types/type'
+import { chartColors } from '@/utils/chartColors'
 import { ResponsivePie } from '@nivo/pie'
 import { useContext, useEffect, useState } from 'react'
 
-export const DoughnutChart = () => {
+export const AnalyzeDoughnutChart = () => {
 	const { spendingData } = useContext(AnalyzeContext)
 	const [animatedData, setAnimatedData] = useState<ChartDataType[]>([])
 
@@ -46,9 +47,10 @@ export const DoughnutChart = () => {
 			margin={{ top: 10, right: 10, bottom: 50, left: 10 }}
 			innerRadius={0.5}
 			padAngle={0.7}
+			valueFormat=' >-,'
 			cornerRadius={3}
 			colors={animatedData.map((each) => each.color)}
-			activeOuterRadiusOffset={9}
+			activeOuterRadiusOffset={5}
 			borderWidth={1}
 			borderColor={{
 				from: 'color',
@@ -59,7 +61,7 @@ export const DoughnutChart = () => {
 			arcLinkLabelsTextColor='#333333'
 			arcLinkLabelsThickness={2}
 			arcLinkLabelsColor={{ from: 'color' }}
-			arcLabelsSkipAngle={17}
+			arcLabelsSkipAngle={3}
 			arcLabelsTextColor={{
 				from: 'color',
 				modifiers: [['darker', 2]],
