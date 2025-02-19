@@ -20,6 +20,7 @@ const InputForm = ({ children }: { children: React.ReactNode }) => {
 
 	const onSubmit: SubmitHandler<IInputFormData> = (data) => {
 		mutate(data)
+		// 페이지 이동이나 입력값 리셋
 	}
 
 	return (

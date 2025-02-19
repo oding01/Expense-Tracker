@@ -8,7 +8,7 @@ interface IBaseFieldProps {
 
 const BaseField = ({ label, unit, children }: IBaseFieldProps) => {
 	return (
-		<div className={`flex flex-col mb-11 ${label === '메모' && 'flex-1'}`}>
+		<div className={`flex flex-col ${label === '메모' && 'flex-1'}`}>
 			{/* 라벨 영역 */}
 			<div className='flex justify-between items-center mb-2'>
 				<label className='text-2xl font-medium ml-0.5'>{label}</label>
@@ -24,4 +24,4 @@ const BaseField = ({ label, unit, children }: IBaseFieldProps) => {
 	)
 }
 
-export default BaseField
+export default React.memo(BaseField)

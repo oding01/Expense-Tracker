@@ -7,7 +7,7 @@ interface RequestValue {
 	category: Json
 	amount: number
 	place: string
-	memo: string
+	memo?: string
 	date: string
 }
 

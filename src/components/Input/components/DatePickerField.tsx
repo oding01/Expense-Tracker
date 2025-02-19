@@ -34,13 +34,15 @@ const DatePickerField = ({ label, name }: DatePickerFieldProps) => {
 	}
 
 	return (
-		<BaseField label={label}>
-			<div className='text-xl px-5 w-full h-16 rounded-[15px] focus:ring-2 focus:ring-inset focus:ring-[#5FB1FF] focus:outline-none bg-transparent flex items-center'>
-				<div className='flex-1'>
-					<DatePick selectedDate={selectedDate} handleSelect={onSelect} />
+		<div className='mb-11'>
+			<BaseField label={label}>
+				<div className='text-xl px-5 w-full h-16 rounded-[15px] focus:ring-2 focus:ring-inset focus:ring-[#5FB1FF] focus:outline-none bg-transparent flex items-center'>
+					<div className='flex-1'>
+						<DatePick selectedDate={selectedDate} handleSelect={onSelect} />
+					</div>
 				</div>
-			</div>
-		</BaseField>
+			</BaseField>
+		</div>
 	)
 }
 
