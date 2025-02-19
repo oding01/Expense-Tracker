@@ -4,7 +4,7 @@ export interface IInputFormData {
 	place: string
 	category: ICategory
 	date: string
-	memo: string
+	memo?: string
 }
 
 export interface ICategory {
